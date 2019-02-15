@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<script>
+
+    var TempAttendeeArray = [];
+    var GlobalAttendee;
+
+    //Function That Fill a given cell
+    function fillCell(id) {
+        var myCell = document.getElementById(id);
+        myCell.innerHTML = "";
+        var i;
+        for (i = 0; i < TempAttendeeArray.length ; i++) {
+            var node = document.createElement("p");
+            var nodeText = document.createTextNode(TempAttendeeArray[i]);
+            node.appendChild(nodeText);
+            myCell.append(node);
+        }
+    }
+
+    //Function That return atendees inside a cell
+    function getCellUsers(id) {
+        var myCell = document.getElementById(id);
+        var i;
+        var numberOfUsersInsideCell = myCell.querySelectorAll("p").length;
+        var UsersInsideCell = [];
+        if(numberOfUsersInsideCell > 0){
+            for (i = 0; i < numberOfUsersInsideCell; i++) {
+                UsersInsideCell.push(myCell.querySelectorAll("p")[i].innerHTML)
+            }
+        }
+        return UsersInsideCell;
+    }
+
+
+    //Function that modify and prepare a temporary attendees Array
+    function AddaptAttendeeArray(AttendeeArrayToAdapt , name) {
+        var i;
+        var found = 0;
+        var attendeeAmount = AttendeeArrayToAdapt.length;
+                for (i = 0; i <= attendeeAmount; i++) {
+                    if (AttendeeArrayToAdapt[i] == name) {
+                        AttendeeArrayToAdapt.splice(i, 1);
+                        TempAttendeeArray = AttendeeArrayToAdapt;
+                        found = 1 ;
+                        break;
+                    }
+                }
+        if(found != 1) {
+            AttendeeArrayToAdapt.push(name);
+            TempAttendeeArray = AttendeeArrayToAdapt;
+        }
+    }
+
+
+</script>

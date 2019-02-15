@@ -1,0 +1,6 @@
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.csprojAssemblyReference.cache
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.csproj.CoreCompileInputs.cache
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.RazorAssemblyInfo.cache
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.RazorAssemblyInfo.cs
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.AssemblyInfoInputs.cache
+c:\users\wakil\source\repos\SopiiTaiEi v1\SopiiTaiEi v1\obj\Debug\netcoreapp2.1\SopiiTaiEi v1.AssemblyInfo.cs

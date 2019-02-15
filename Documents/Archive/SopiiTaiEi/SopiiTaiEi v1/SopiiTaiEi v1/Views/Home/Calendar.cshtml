@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Calendar";
+    int i, j = 0;
+    var interval = ViewBag.interval;
+    DateTime startingDate = ViewBag.StartingDate;
+    DateTime EndingDate = ViewBag.EndingDate;
+
+}
+
+
+
+
+@section Scripts {
+    <script src="~/js/index.js"></script>
+}
+
+<div id="connection-info" class="disconnected">
+    <p>connecting...</p>
+</div>
+<div id="welcome-panel" class="container-fluid">
+    <form>
+        <h3>let's set a suitable meeting !</h3>
+        <input type="text" name="attendeeName" id="attendeeName" placeholder="Your Name!" />
+        <button type="submit">ready</button>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover-cells table-responsive table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="@((interval * 2)+2)">
+                    Meeting Between <span class="badge badge-info">@startingDate.ToShortDateString() </span>  And  <span class="badge badge-info">@EndingDate.ToShortDateString()</span>
+                </th>
+            </tr>
+        </thead>
+        <tr>
+            @for (i = 0; i <= interval; i++)
+            {
+                <th colspan="2" class="table-active">
+                    @startingDate.AddDays(j).ToString("dddd, dd")
+                    @{
+                        j++;
+                    }
+
+                </th>
+            }
+        </tr>
+        @{j = 0;}
+        @for (i = 0; i < 24; i++)
+        {
+            <tr>
+                @do
+                {
+                    <th width="5%" class="table-active ">
+                        @i:00
+                    </th>
+                    //onclick = "renderCell(this.id)"
+                    <td id="@j-@i"></td>
+                    j++;
+                } while (j <= interval);
+            </tr>
+            j = 0;
+        }
+    </table>
+
+</div>
+<script>
+    var interval = @interval;
+</script>
